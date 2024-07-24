@@ -1,14 +1,9 @@
-import Card from "./Card";
-import Button from "./Button/Button";
+import UserGreeting from "./UserGreeting";
 
 function App(){
   return(
     <>
-      {/* <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      <Card></Card> */}
-      <Button></Button>
+      <UserGreeting isLoggedIn={false}></UserGreeting>
     </>
   );
 
