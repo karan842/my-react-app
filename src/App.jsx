@@ -1,6 +1,6 @@
-import MyComoponent from "./MyComponent";
+import MyArrayUpdate from "./MyArrayUpdate";
 
 function App() {
-  return(<MyComoponent/>);
+  return(<MyArrayUpdate/>);
 }
 export default App
