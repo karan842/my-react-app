@@ -1,38 +1,30 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 
-
-// We can create stateful variable
 function MyComoponent(){
 
-    const [name, setName] = useState("Guest");
-    const [age, setAge] = useState(0);
+    const [car, setCar] = useState({year:2024, 
+                                    make:"BMW", 
+                                    model:"M8"});
 
-    const [isEmployed, setIsEmployed] = useState(false);
+    function handleYearChange(event){
+        setCar(c => ({...c, year: event.target.value}));
+    }
+    function handleMakeChange(event){
+        setCar(c => ({...c, make: event.target.value}));
 
-    const updateName = () => {
-        setName("Spongbob")
+    }
+    function handleModelChange(event){
+        setCar(c => ({...c, model: event.target.value}));
     }
 
-    const incrementAge = () => {
-        setAge(age + 2);
-    }
 
-    const toggleEmployedStatus = () => {
-        setIsEmployed(!isEmployed);
-    }
-
-    return(
+    return (<>
         <div>
-            <p>Name: {name}</p>
-            <button onClick={updateName}>Set Name</button>
-            
-            <p>Age: {age}</p>
-            <button onClick={incrementAge}>Increment Age</button>
-            
-            <p>Is Employed: {isEmployed ? "Yes" : "No"}</p>
-            <button onClick={toggleEmployedStatus}>Is Employed</button>
+            <p>You favourite car is: {car.year} {car.make} {car.model}</p>
+            <input type="number" value={car.year} onChange={handleYearChange}/><br/>
+            <input type="text" value={car.make} onChange={handleMakeChange}/><br/>
+            <input type="text" value={car.model} onChange={handleModelChange}/><br/>
         </div>
-    )
-
+    </>)
 }
 export default MyComoponent
